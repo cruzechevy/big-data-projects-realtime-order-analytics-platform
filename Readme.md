@@ -41,6 +41,34 @@ Producer → Kafka → Spark Structured Streaming → Parquet → Streamlit Dash
 
 ---
 
+## Challenges
+### ⚙️ Spark Deployment Challenges (Windows vs Docker)
+Initially, I attempted to run Apache Spark on a local Windows environment. However, this led to repeated Hadoop filesystem compatibility issues and instability.  
+To resolve this, I transitioned to a Docker-based setup running Spark on Linux, which provided a more stable and production-aligned environment.
+
+---
+
+### 🔄 From Batch to True Streaming Pipeline
+The initial design consisted of separate scripts for Bronze, Silver, and Gold layers, which behaved like batch processing pipelines.  
+To enable real-time processing, I refactored the architecture into a single unified Spark Structured Streaming job. This allowed continuous data ingestion and transformation with lower latency, while maintaining the layered logic within one pipeline.
+
+---
+
+### ⚠️ Handling Real-Time Data Inconsistencies
+While building the Streamlit dashboard, I encountered race conditions between Spark writing Parquet files and the dashboard reading them.  
+This resulted in intermittent errors such as empty files or missing columns. I implemented fault-tolerant reads and validation checks to ensure dashboard stability.
+
+---
+
+### 🔌 Kafka & Docker Networking Challenges
+Configuring Kafka inside Docker to communicate with both local producers and containerized Spark required careful setup of advertised listeners and ports.  
+This helped me understand real-world distributed system networking issues.
+
+---
+
+
+
+
 ## 🚀 How to Run
 
 ### 1. Start Docker Services
