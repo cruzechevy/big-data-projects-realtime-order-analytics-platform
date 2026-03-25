@@ -75,6 +75,14 @@ This helped me understand real-world distributed system networking issues.
 
 ---
 
+## 🔮 Future Improvements
+
+- Replace Parquet with Delta Lake for atomic writes
+- Deploy pipeline on cloud (AWS / Azure)
+- Add window-based aggregations for time-based analytics
+- Introduce Airflow for orchestration
+
+---
 
 
 
