@@ -4,6 +4,15 @@ An end-to-end real-time data engineering project that processes streaming order 
 
 ---
 
+## 🚀 Project Highlights
+
+- Built a real-time streaming pipeline using Kafka and Spark Structured Streaming
+- Implemented layered data architecture (Bronze → Silver → Gold)
+- Handled real-world challenges like race conditions and streaming inconsistencies
+- Designed an interactive Streamlit dashboard with live updates
+
+---
+
 ## 🏗️ Architecture
 
 Producer → Kafka → Spark Structured Streaming → Parquet → Streamlit Dashboard
