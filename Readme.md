@@ -9,7 +9,7 @@ An end-to-end real-time data engineering project that processes streaming order 
 Producer → Kafka → Spark Structured Streaming → Parquet → Streamlit Dashboard
 ![Dashboard](images\architecture.png)
 
----
+----
 
 ## ⚙️ Tech Stack
 
